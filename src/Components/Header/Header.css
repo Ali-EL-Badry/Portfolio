@@ -1,0 +1,129 @@
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 3rem;
+    position:fixed;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition: 600ms;
+    border-radius: 8px;
+}
+.sticky{
+    padding: 1rem 4rem;
+    background: linear-gradient(135deg, #000000, #292929);
+    box-shadow: 0 4px 8px rgba(92, 92, 92, 0.4);
+}
+.Logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #3498db;
+    flex:1;
+}   
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav .nav-path{
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+}
+
+.nav a.active, .nav a:hover {
+    color: #3498db;
+}
+.nav .nav-icons{
+    flex: 2;
+    text-align: right;
+}
+
+.github, .linkedin {
+    color: white; 
+    margin: 0 20px; 
+    transition: all 0.3s ease;
+}
+
+.github:hover, .linkedin:hover {
+    transform: scale(1.2);
+    color: #3498db; 
+}
+
+.menu-button {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color:#0e0e0e ;
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.sidebar-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+.sidebar-nav a.active , .sidebar-nav a:hover, .menu-button:hover , .close-button:hover{
+    color: #3498db;
+}
+.close-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: flex-end;
+}
+
+@media (max-width: 1100px) {
+    .nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
