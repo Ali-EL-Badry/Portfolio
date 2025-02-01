@@ -5,6 +5,7 @@ import Home from './Components/Routes/Main/Home.jsx';
 import Project from './Components/Routes/Project/Project.jsx';
 import Cert from './Components/Routes/Cert/Cert.jsx';
 import Feedback from './Components/Routes/Feedback/Feedback.jsx';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} basename="/portfolio" />;
 }
 
 export default App;
