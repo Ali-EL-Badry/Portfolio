@@ -19,12 +19,7 @@ const Footer = () => {
           <a href="https://github.com/Ali-EL-Badry" target="_blank" rel="noopener noreferrer">
             <FaGithub className="social-icon" />
           </a>
-          <a href="https://www.facebook.com/aly.yasser.el.badry/" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="social-icon" />
-          </a>
-          <a href="https://www.instagram.com/aly_el_badry/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="social-icon" />
-          </a>
+
           <a href="mailto:ali.el.badry.747@gmail.com" target="_blank" rel="noopener noreferrer">
             <FaEnvelope className="social-icon" />
           </a>

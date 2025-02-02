@@ -27,7 +27,8 @@ const Home = () =>{
             <p className='Name'>I am Aly El-Badry</p>
             <p className="desc">An innovative-minded Data Scientist and Full-Stack Developer, aspiring to become an AI Engineer, blending creativity with technology to build intelligent solutions</p>
             <a className="btn" href="#contact" >Contact me</a>
-            <button className="btn">Download CV</button>
+            <a href="/Aly-El-Deen-Yasser-Ali-CV" download="Aly-El-Deen-Yasser-Ali-CV.pdf" className="btn">Download CV</a>
+
           </div>
         </div>
       </div>
