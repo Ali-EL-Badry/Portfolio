@@ -27,6 +27,10 @@ const Project = () =>{
                         <p className="sub">Technology: Supervised and Unsupervised Algo.</p>
                     </a>
                 </div>
+                    <div className="kaggle-section">
+                        <p>If you want to see more trained models and notebooks, visit my</p>
+                        <a href="https://www.kaggle.com/alyelbadry" className="kaggle-button" target="_blank">Kaggle Account</a>
+                    </div>
                 <div className="title">Web Development</div>
                 <hr />
                 <div className="cards">

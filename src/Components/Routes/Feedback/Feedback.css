@@ -1,12 +1,13 @@
+/* Main Container */
 .feed {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding: 10%;
+    min-height: 100vh;
     width: 100%;
-    background: linear-gradient(to bottom, black, #003366);
+    background: linear-gradient(180deg, #000000 40%, #3498db );
+    padding: 5%; 
 }
 
 /* Form Container */
@@ -19,8 +20,21 @@
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+.form{
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* Title */
 .form-title {
     text-align: center;
@@ -33,6 +47,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    width: 100%; 
 }
 
 label {
@@ -47,6 +62,8 @@ input, select, textarea {
     font-size: 1em;
     background: rgba(255, 255, 255, 0.2);
     color: white;
+    width: 100%;
+    margin-bottom: 10px; /* Adds space between form fields */
 }
 
 /* Style the select dropdown */
@@ -58,8 +75,8 @@ select {
 
 /* Style the dropdown options */
 select option {
-    background: #003366;
-    color: white;
+    background: #3498db;
+    color: black;
 }
 
 /* Placeholder Styling */
@@ -82,7 +99,7 @@ textarea {
     font-size: 1.2em;
     transition: background 0.3s ease-in-out;
     display: block;
-    margin: 0 auto; /* Centers the button */
+    margin: 20px auto; /* Adds space around button */
     width: 50%;
     text-align: center;
 }
@@ -91,13 +108,33 @@ textarea {
     background: #0056b3;
 }
 
-@media (max-width: 600px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feed {
+        padding: 10px;
+    }
+
     .form-container {
-        width: 90%;
-        padding: 20px;
+        width: 90%; /* Adjust form width for smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
     }
 
     .submit-button {
-        width: 70%;
+        width: 70%; /* Makes button larger on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 1.4em; /* Reduces font size for small screens */
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .submit-button {
+        width: 80%; /* Further increases button size */
+        font-size: 1em; /* Adjusts font size for better readability */
     }
 }

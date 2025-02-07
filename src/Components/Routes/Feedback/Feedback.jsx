@@ -32,28 +32,26 @@ const Feedback = () => {
 
     return (
         <div className="feed">
-            <div className="container">
-                <h2 className="title">Feedback Form</h2>
-                <form onSubmit={handleSubmit} className="form">
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input id="name" name="name" type="text" value={formData.name} onChange={handleChange} required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="service">Type of Service</label>
-                        <select id="service" name="service" onChange={handleChange} value={formData.service}>
-                            <option value="data-science">Data Science</option>
-                            <option value="web-development">Web Development</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="feedback">Feedback</label>
-                        <textarea id="feedback" name="feedback" rows={4} value={formData.feedback} onChange={handleChange} required />
-                    </div>
-                    <button type="submit" className="submit-button">Submit</button>
-                </form>
-            </div>
+            <h2 className="title">Feedback Form</h2>
+            <form onSubmit={handleSubmit} className="form">
+                <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input id="name" name="name" type="text" value={formData.name} onChange={handleChange} required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="service">Type of Service</label>
+                    <select id="service" name="service" onChange={handleChange} value={formData.service}>
+                        <option value="data-science">Data Science</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="feedback">Feedback</label>
+                    <textarea id="feedback" name="feedback" rows={4} value={formData.feedback} onChange={handleChange} required />
+                </div>
+                <button type="submit" className="submit-button">Submit</button>
+            </form>
         </div>
     );
 };

@@ -80,3 +80,30 @@
         margin: 30px;
     }
 }
+
+.kaggle-section {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+.kaggle-section p{
+    margin-bottom: 10px;
+}
+
+.kaggle-button {
+    display: inline-block;
+    background-color: #1A9AD6; /* Kaggle Blue */
+    color: black;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.kaggle-button:hover {
+    background-color: black;
+    color: #1A9AD6;
+}

@@ -27,7 +27,7 @@ const Home = () =>{
             <p className='Name'>I am Aly El-Badry</p>
             <p className="desc">An innovative-minded Data Scientist and Full-Stack Developer, aspiring to become an AI Engineer, blending creativity with technology to build intelligent solutions</p>
             <a className="btn" href="#contact" >Contact me</a>
-            <a href="/Aly-El-Deen-Yasser-Ali-CV" download="Aly-El-Deen-Yasser-Ali-CV.pdf" className="btn">Download CV</a>
+            <a href="https://drive.google.com/file/d/1j1OgHYgD21k0HwfD-f5C0zm7-Iw0eXry/view?usp=sharing" className="btn">Download CV</a>
 
           </div>
         </div>
@@ -146,7 +146,7 @@ const Home = () =>{
             <p className="sub">Technology: C++, QT</p>
           </a>
         </div>
-        <NavLink className="btton" id='btn' to="/projects">For More</NavLink>
+        <NavLink className="btton " id='blue' to="/projects">For More</NavLink>
 
         <div className='title'>Some Certificates</div>
         <hr />
@@ -167,7 +167,7 @@ const Home = () =>{
             <p className="sub">From: ALX</p>
           </div>
         </div>
-        <NavLink className="btton" id='btn' to='/certificats'>For More</NavLink>
+          <NavLink className="btton" id='black' to='/certificats'>For More</NavLink>
       </div>
     </>
   );

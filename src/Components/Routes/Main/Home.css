@@ -371,16 +371,16 @@ hr {
 }
 
 
-.project{
+.project {
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  background: linear-gradient(180deg, #000000, #282828);
+  padding: 50px 20px; /* Adjusted for smaller screens */
+  background: linear-gradient(180deg, #000000 50%, #3498db);
   justify-content: center;
   align-items: center;
-
 }
 
+/* Common Styles for Projects & Certifications */
 .projects, .cert {
   display: flex;
   gap: 40px;
@@ -389,18 +389,19 @@ hr {
   justify-content: center;
   border-radius: 10px;
   margin: 20px auto;
+  max-width: 1200px; /* Ensures better alignment on large screens */
 }
 
-/* Card Styling */
-.card {
+/* Card Styling (Same for Projects & Certifications) */
+.projects .card, .cert .card {
   background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 100%);
   border-radius: 16px;
-  min-width: 300px;
+  min-width: 300px; /* Ensures both have the same size */
   max-width: 300px;
+  flex: 1; /* Allows equal resizing */
   box-shadow: 0 4px 10px rgba(0, 162, 255, 0.2); /* Blue Glow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  flex:1;
   color: #fff;
   text-align: center;
   padding: 15px;
@@ -418,10 +419,13 @@ hr {
 
 .card img {
   width: 100%;
-  height: 180px; 
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+.cert .card img {
+  margin: 0 25px; 
 }
 
 /* Text Styling */
@@ -439,6 +443,7 @@ hr {
   margin-top: 5px;
 }
 
+/* Button Styling */
 .btton {
   padding: 10px 20px;
   text-transform: uppercase;
@@ -456,13 +461,79 @@ hr {
   user-select: none;
 }
 
-.project #btn:hover{
+.project #blue:hover {
   color: #ffffff;
   background: #008cff;
   border: 1px solid #008cff;
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
   box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
     0 0 100px #008cff;
+}
+.project #black:hover {
+  color: #ffffff;
+  background: black;
+  border: 1px solid black;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px black, 0 0 20px black, 0 0 50px black,
+    0 0 100px #008cff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects, .cert {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .projects .card, .cert .card {
+    min-width: 250px;
+    max-width: 90%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project {
+    padding: 30px 15px;
+  }
+
+  .projects, .cert {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects .card, .cert .card {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    padding: 20px 10px;
+  }
+
+  .projects .card, .cert .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .card .main {
+    font-size: 1rem;
+  }
+
+  .btton {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
 }
 
 
