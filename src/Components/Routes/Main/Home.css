@@ -5,6 +5,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   overflow: hidden;
 }
@@ -28,6 +29,7 @@
 .welcome {
   font-size: 3rem;
   letter-spacing: 3px;
+  margin-top: 80px;
   font-weight: 900;
   color: #3498db;
   animation: fadeIn 0.7s ease-in-out;
@@ -55,19 +57,23 @@
 
 .btn {
   margin-top: 50px;
-  padding: 15px 30px;
+  padding: 12px 30px;
   margin-right: 5px;
   text-decoration: none;
   margin-left: 5px;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  background: #333;
+  background: rgb(51, 51, 51, 0.5);
   color: white;
   border: none;
   cursor: pointer;
   transition: 0.3s;
   border-radius: 5px;
+  border: 1px solid #3498db;
+  filter: drop-shadow(0 0 0.75rem #476e89);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1.5s forwards;
 }
 
 .btn:hover {
@@ -75,6 +81,52 @@
   color: black;
 }
 
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.arr {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.aa {
+  font-size: 2rem;
+  margin-right: 12px; 
+  color: white; 
+  animation: bounce 1.5s infinite; 
+  transition: all 0.3s;
+  animation: fadeInUp 1s ease-out, bounce 1.5s infinite 1s;
+}
+.arr:hover .aa {
+  color: #3498db; 
+  text-shadow: 0px 0px 40px #3498db; 
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Move down */
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); /* Start lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to normal position */
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -85,6 +137,9 @@
 }
 
 @media (max-width: 768px) {
+  .aa{
+    font-size: 1.5rem;
+  }
   .welcome {
     font-size: 2rem; 
     letter-spacing: 2px;
@@ -127,11 +182,12 @@
 
 .about {
   margin: 3rem auto;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 
 .title {
   font-size: 2.5rem;
+  margin-top: 2rem;
   font-weight: 1000;
   color: #3498db;
   margin-bottom: 2rem;
@@ -152,7 +208,7 @@ hr {
   align-items: center;
   gap: 2rem;
   background-color: #0e0e0e;
-  filter: drop-shadow(0 0 1rem #434343);
+  filter: drop-shadow(0 0 0.5rem #3498db); 
   border-radius: 10px;
   padding: 3rem;
 }
@@ -164,9 +220,9 @@ hr {
 }
 
 .about-text {
-  width: 60%;
+  width: 70%;
   padding: 2rem;
-  border-left: 3px solid #3498db;
+  border-right: 3px solid #3498db;
 }
 
 .main-text {
@@ -203,6 +259,7 @@ hr {
     flex-direction: column;
     text-align: center;
     padding: 2rem;
+    flex-direction: column-reverse;
   }
 
   .about-content img {
@@ -212,7 +269,7 @@ hr {
 
   .about-text {
     width: 100%;
-    border-left: none;
+    border-right: none;
     padding: 1.5rem 0;
   }
 
