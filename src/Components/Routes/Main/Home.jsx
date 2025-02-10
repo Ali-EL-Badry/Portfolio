@@ -3,7 +3,7 @@ import React from 'react'
 import videoBg from "./vi.mp4"; 
 import Profile from './lol.jpg';
 import { NavLink } from 'react-router-dom';
-import { FaArrowRight } from "react-icons/fa";
+import { FaAngleDoubleDown, FaArrowRight } from "react-icons/fa";
 import pothole from './pothole detection (1).png';
 import fasion from './fasion.jpg';
 import vole from './vole.png';
@@ -13,7 +13,9 @@ import alx from './alx.png';
 
 
 const Home = () =>{
-  
+  const handleScroll = () => {
+    window.scrollBy({ top: 690, behavior: "smooth" }); 
+  };
   
   return (
     <>
@@ -28,20 +30,26 @@ const Home = () =>{
             <p className="desc">An innovative-minded Data Scientist and Full-Stack Developer, aspiring to become an AI Engineer, blending creativity with technology to build intelligent solutions</p>
             <a className="btn" href="#contact" >Contact me</a>
             <a href="https://drive.google.com/file/d/1j1OgHYgD21k0HwfD-f5C0zm7-Iw0eXry/view?usp=sharing" className="btn">Download CV</a>
-
+            
           </div>
+          
+        </div>
+        <div className="arrow">
+            <div className="down-arrow">
+              <button className="arr" onClick={handleScroll}>
+                <FaAngleDoubleDown className="aa" />
+              </button>
+            </div>
         </div>
       </div>
       
-      <div className='title'>Who is Aly El-Badry?</div>
+      <div className='title' id="about">Who is Aly El-Badry?</div>
       <hr />
-      <div className="about" id="#about">
+      <div className="about" >
         <div className='about-content'>
-          <img src={Profile} alt="profile-img" className='My-Image'/>
           <div className="about-text">
             <p className="main-text">I am a Second year Cairo University student in Faculty of computer science and Artifical inteligence and passionate Data Scientist and Full-Stack Developer, on my journey to becoming an AI Engineer.</p>
             <p className="subtext">
-              
               <div className="sub">
               <div className="arrow-container">
                 <FaArrowRight className="arrow-icon" />
@@ -68,14 +76,24 @@ const Home = () =>{
               </div>
             </p>
           </div>
+          <img src={Profile} alt="profile-img" className='My-Image'/>
         </div>
       </div>
-      
+
+      <div className="title">Education</div>
+      <hr />
+      <div className="about" >
+        <div className='about-content'>
+          <h3>Cairo University, Computer Science & Artificial Intelligence</h3>
+          <p>December 2021 - Present</p>
+        </div>
+      </div>
+
       <div className='title'>Skills and Services</div>
       <hr />
       
       <div className="timeline">
-      <video autoPlay loop muted className="video-bg">
+        <video autoPlay loop muted className="video-bg">
           <source src={videoBg} type="video/mp4" />
         </video>
         <div className="container left">
