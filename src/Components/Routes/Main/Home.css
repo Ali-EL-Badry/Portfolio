@@ -113,18 +113,18 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px); /* Move down */
+    transform: translateY(10px); 
   }
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(100px); /* Start lower */
+    transform: translateY(100px); 
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Move to normal position */
+    transform: translateY(0);
   }
 }
 @keyframes fadeIn {
@@ -315,6 +315,139 @@ hr {
 
   .arrow-icon {
     font-size: 1.1rem;
+  }
+}
+.college-head{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between; 
+  flex: row;
+}
+.college-head p{
+  padding-top: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+.college-content{
+  color: gray;
+  filter: drop-shadow(0 0 0.75rem #56626a);
+  width: 80%;
+}
+.college-content .main{
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.college-content > hr {
+  width: 100%;
+  border: 1px solid #3498db;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  filter: drop-shadow(0 0 0.75rem #3498db);
+}
+.college-content .headlist{
+  color: #3498db;
+  font-weight: 900;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 0.75rem #3498db);
+}
+.college-content ul{
+  padding-left: 20px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .college-head {
+    flex-direction: column;
+  }
+  .college-content {
+    width: 100%;
+  }
+}
+
+.exp{
+  display: flex;
+  justify-content: center;
+  margin: 0rem auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  padding: 3rem 0;  
+}
+.sec{
+  width: 80%;
+}
+
+.comp-name{
+  font-weight: 900;
+}
+.comp-name > h2{
+  color: #3498db;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 0.75rem #3498db);
+  
+}
+.comp-head{
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  margin-bottom: 10px;
+}
+
+.college-content.com{
+  width: 80%;
+}
+.exp >img{
+  border-radius: 10px;
+  filter: drop-shadow(0 0 0.75rem #3498db);
+}
+
+.activity {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  margin: 3rem auto;
+  width: 1200px;
+}
+
+.bar {
+  color: white;
+  width: 40%;
+  padding: 20px;
+  box-shadow: 0 0px 10px #3498db; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.activity-head {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.member-title {
+  font-size: 1rem;
+  color: gray;
+}
+
+.activity-content {
+  margin-top: 10px;
+  text-align: center;
+  color: lightgray;
+}
+
+/* For responsive layout (2 cards on larger screens) */
+@media screen and (min-width: 768px) {
+  .activity {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

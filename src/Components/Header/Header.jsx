@@ -6,8 +6,7 @@ import './Header.css';
 function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const location = useLocation(); // Get the current location object
-  
+  const location = useLocation(); 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -49,7 +48,7 @@ function Header() {
         </div>
         <button className="menu-button" onClick={toggleSidebar}>☰</button>
       </header>
-
+      
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <button className="close-button" onClick={toggleSidebar}>✕</button>
         <nav className="sidebar-nav">
