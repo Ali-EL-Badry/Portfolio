@@ -7,9 +7,8 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 50px;
     justify-content: center;
-    gap: 30px; /* Reduced gap for better spacing */
+    gap: 30px; 
     width: 100%;
 }
 
@@ -17,7 +16,7 @@
 .ca {
     background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 100%);
     border-radius: 16px;
-    width: 30%;
+    width: 30%;  
     margin: 50px;
     box-shadow: 0 4px 10px rgba(0, 162, 255, 0.2); /* Blue Glow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;

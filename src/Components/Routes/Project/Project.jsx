@@ -1,13 +1,13 @@
 import React from 'react'
 import './Project.css'
-import pothole from './pothole detection (1).png'
-import machine from './Machine.png';
-import vole from './vole.png';
-import fasion from './fasion.jpg';
-import house from './house.png';
-import elearn from './e-learn.png';
-import xo from './x.jpeg';
-import pho from './photoshop..png'
+import pothole from './assests/pothole detection (1).png'
+import machine from './assests/Machine.png';
+import vole from './assests/vole.png';
+import fasion from './assests/fasion.jpg';
+import house from './assests/house.png';
+import elearn from './assests/e-learn.png';
+import xo from './assests/x.jpeg';
+import pho from './assests/photoshop..png'
 
 const Project = () =>{
     return(

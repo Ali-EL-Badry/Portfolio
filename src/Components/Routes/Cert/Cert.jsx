@@ -1,17 +1,17 @@
 import React from 'react'
-import hcia from './HCIA.jpg';
-import java from './java course.jpg';
-import aice from './alx.png';
-import ecpc from './ecpc.png';
-import dotpy from './dotpy.jpeg';
-import clean from './clean.png';
-import oop from './oop.png';
-import hc from './html.png';
-import py from './pyrhon.png';
-import pan from './pandas.png';
-import machine from './machine.png';
-import data from './data.png';
-import sql from './sql.jpg';
+import hcia from './assests/HCIA.jpg';
+import java from './assests/java course.jpg';
+import aice from './assests/alx.png';
+import ecpc from './assests/ecpc.png';
+import dotpy from './assests/dotpy.jpeg';
+import clean from './assests/clean.png';
+import oop from './assests/oop.png';
+import hc from './assests/html.png';
+import py from './assests/pyrhon.png';
+import pan from './assests/pandas.png';
+import machine from './assests/machine.png';
+import data from './assests/data.png';
+import sql from './assests/sql.jpg';
 const Cert = () =>{
     return(
         <>
