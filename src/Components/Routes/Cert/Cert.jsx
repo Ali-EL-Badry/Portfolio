@@ -14,23 +14,25 @@ import data from './assests/data.png';
 import sql from './assests/sql.jpg';
 import { motion } from "framer-motion";
 import Git from './assests/Git and Github.png';
+import { NavLink } from 'react-router-dom';
 
 const certificates = [
-  { img: hcia, alt: "hci", main: "HCIA:AI", sub: "From: Huawei ICT Academy" },
+  { img: hcia, alt: "hcia", main: "HCIA:AI", sub: "From: Huawei ICT Academy" },
   { img: java, alt: "Java", main: "Java Course", sub: "From: Huawei ICT Academy" },
   { img: Git, alt: "Git", main: "Intro to Git and Github", sub: "From: Google | Coursera" },
   { img: aice, alt: "AICE", main: "AI Career Essential", sub: "From: Alx" },
   { img: ecpc, alt: "ECPC", main: "ECPC Competition", sub: "Technology: ECPC" },
   { img: dotpy, alt: "DOtpy", main: "AI Diploma", sub: "From: Dotpy" },
-  { img: clean, alt: "clean", main: "Clean Code", sub: "From: ITI" },
+  { img: clean, alt: "clean-code", main: "Clean Code", sub: "From: ITI" },
   { img: oop, alt: "OOP", main: "Mastering OOP", sub: "From: ITI" },
   { img: hc, alt: "HTML-CSS", main: "HTML and CSS", sub: "From: ITI" },
   { img: py, alt: "python", main: "Python", sub: "From: Kaggle" },
   { img: pan, alt: "Pandas", main: "Pandas", sub: "From: Kaggle" },
-  { img: machine, alt: "Intro to Machine Learning", main: "Intro to Machine Learning", sub: "From: Kaggle" },
-  { img: data, alt: "Data Cleaning", main: "Data Cleaning", sub: "From: Kaggle" },
-  { img: sql, alt: "SQL", main: "SQL Course", sub: "From: Udemy" },
+  { img: machine, alt: "intro-to-machine", main: "Intro to Machine Learning", sub: "From: Kaggle" },
+  { img: data, alt: "data-cleaning", main: "Data Cleaning", sub: "From: Kaggle" },
+  { img: sql, alt: "sql", main: "SQL Course", sub: "From: Udemy" },
 ];
+const MotionNavLink = motion(NavLink);
 
 const Cert = () => {
   return (
@@ -48,7 +50,9 @@ const Cert = () => {
         }}
       >
         {certificates.map(({ img, alt, main, sub }, index) => (
-          <motion.div 
+          <MotionNavLink 
+            exact
+            to={`/certificats/${alt}`}
             className="ca" 
             key={index}
             initial={{ opacity: 0, y: 30 }}
@@ -59,7 +63,7 @@ const Cert = () => {
             <img src={img} alt={alt} />
             <p className="main">{main}</p>
             <p className="sub">{sub}</p>
-          </motion.div>
+          </MotionNavLink>
         ))}
       </motion.div>
     </>

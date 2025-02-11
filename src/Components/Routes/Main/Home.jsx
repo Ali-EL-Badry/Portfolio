@@ -17,6 +17,7 @@ import event from "./assests/event.jpg";
 import h from './assests/huawei.jpg';
 import { motion } from "framer-motion";
 
+
 const Home = () =>{
   const handleScroll = () => {
     window.scrollBy({ top: 690, behavior: "smooth" }); 
@@ -306,21 +307,21 @@ const Home = () =>{
         whileInView={{ y: 0, opacity: 1 }}  
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }} className="cert">
-          <div className="card">
+          <NavLink exact to={`/certificats/hcia`} className="card">
             <img src={hcia} alt="hcia" />
             <p className="main">HCIA:AI</p>
             <p className="sub">From: Huawei ICT Academy</p>
-          </div>
-          <div className="card">
+          </NavLink>
+          <NavLink exact to={`/certificats/DOtpy`} className="card">
             <img src={dotpy} alt="dotpy" />
             <p className="main">AI Diploma</p>
             <p className="sub">From: DOTPY</p>
-          </div>
-          <div className="card">
+          </NavLink>
+          <NavLink exact to={`/certificats/aice`} className="card">
             <img src={alx} alt="alx" />
             <p className="main">AI Carrer essential</p>
             <p className="sub">From: ALX</p>
-          </div>
+          </NavLink>
         </motion.div>
           <NavLink className="btton" id='black' to='/certificats'>For More</NavLink>
       </div>

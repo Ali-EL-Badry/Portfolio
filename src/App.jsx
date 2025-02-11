@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'projects', element: <Project /> },
       { path: 'certificats', element: <Cert /> },
-      { path: 'certificats/:certificate', element: <CertDesc /> },
+      { path: 'certificats/:certId', element: <CertDesc /> },
       { path: 'feedback', element: <Feedback /> },
     ],
   },
