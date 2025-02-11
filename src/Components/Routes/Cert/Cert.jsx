@@ -12,80 +12,58 @@ import pan from './assests/pandas.png';
 import machine from './assests/machine.png';
 import data from './assests/data.png';
 import sql from './assests/sql.jpg';
-const Cert = () =>{
-    return(
-        <>
-            <div className="title first">Certificates</div>
-            <hr />
-            <div className="cards">
-                <div className="ca">
-                    <img src={hcia} alt="hci" />
-                    <p className="main">HCIA:AI</p>
-                    <p className="sub">From: Huawei ICT Academy</p>
-                </div>
-                <div className="ca">
-                    <img src={java} alt="Java" />
-                    <p className="main">Java Course</p>
-                    <p className="sub">From: Huawei ICT Academy</p>
-                </div>
-                <div  className="ca">
-                    <img src={aice} alt="AICE" />
-                    <p className="main">AI Career Essential</p>
-                    <p className="sub">From: Alx</p>
-                </div>
-                <div className="ca">
-                    <img src={ecpc} alt="ECPC" />
-                    <p className="main">ECPC Competition</p>
-                    <p className="sub">Technology: ECPC</p>
-                </div>
-                <div className="ca">
-                    <img src={dotpy} alt="DOtpy" />
-                    <p className="main">AI Deploma</p>
-                    <p className="sub">From: Dotpy</p>
-                </div>
-                <div className="ca">
-                    <img src={clean} alt="clean" />
-                    <p className="main">Clean Code</p>
-                    <p className="sub">From: ITI </p>
-                </div>
-                <div className="ca">
-                    <img src={oop} alt="OOP" />
-                    <p className="main">Mastering OOP</p>
-                    <p className="sub">From: ITI </p>
-                    </div>
-                <div className="ca">
-                    <img src={hc} alt="HTML-CSS" />
-                    <p className="main">HTML and CSS</p>
-                    <p className="sub">From: ITI</p>
-                </div>
-                <div className="ca">
-                    <img src={py} alt="python" />
-                    <p className="main">Python</p>
-                    <p className="sub">From: Kaggle</p>
-                </div>
-                <div className="ca">
-                    <img src={pan} alt="Pandas" />
-                    <p className="main">Pandas</p>
-                    <p className="sub">From: Kaggle</p>
-                </div>
-                <div className="ca">
-                    <img src={machine} alt="Intro to Machine Learing" />
-                    <p className="main">Intro to machine learning</p>
-                    <p className="sub">From: Kaggle</p>
-                </div>
-                <div className="ca">
-                    <img src={data} alt="Data Cleaning" />
-                    <p className="main">Data Cleaning</p>
-                    <p className="sub">From: Kaggle</p>
-                </div>
-                <div className="ca">
-                    <img src={sql} alt="SQL" />
-                    <p className="main">SQl course</p>
-                    <p className="sub">From: Udemy</p>
-                </div>
-            </div>
-        </>
-    )
-}
+import { motion } from "framer-motion";
+import Git from './assests/Git and Github.png';
+
+const certificates = [
+  { img: hcia, alt: "hci", main: "HCIA:AI", sub: "From: Huawei ICT Academy" },
+  { img: java, alt: "Java", main: "Java Course", sub: "From: Huawei ICT Academy" },
+  { img: Git, alt: "Git", main: "Intro to Git and Github", sub: "From: Google | Coursera" },
+  { img: aice, alt: "AICE", main: "AI Career Essential", sub: "From: Alx" },
+  { img: ecpc, alt: "ECPC", main: "ECPC Competition", sub: "Technology: ECPC" },
+  { img: dotpy, alt: "DOtpy", main: "AI Diploma", sub: "From: Dotpy" },
+  { img: clean, alt: "clean", main: "Clean Code", sub: "From: ITI" },
+  { img: oop, alt: "OOP", main: "Mastering OOP", sub: "From: ITI" },
+  { img: hc, alt: "HTML-CSS", main: "HTML and CSS", sub: "From: ITI" },
+  { img: py, alt: "python", main: "Python", sub: "From: Kaggle" },
+  { img: pan, alt: "Pandas", main: "Pandas", sub: "From: Kaggle" },
+  { img: machine, alt: "Intro to Machine Learning", main: "Intro to Machine Learning", sub: "From: Kaggle" },
+  { img: data, alt: "Data Cleaning", main: "Data Cleaning", sub: "From: Kaggle" },
+  { img: sql, alt: "SQL", main: "SQL Course", sub: "From: Udemy" },
+];
+
+const Cert = () => {
+  return (
+    <>
+      <div className="title first">Certificates</div>
+      <hr />
+      <motion.div 
+        className="cards"
+        initial="hidden"
+        whileInView="visible" 
+        viewport={{ once: true, amount: 0 }} 
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, duration: 0.3 } }
+        }}
+      >
+        {certificates.map(({ img, alt, main, sub }, index) => (
+          <motion.div 
+            className="ca" 
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+          >
+            <img src={img} alt={alt} />
+            <p className="main">{main}</p>
+            <p className="sub">{sub}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </>
+  );
+};
 
 export default Cert;

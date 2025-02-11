@@ -15,6 +15,7 @@ import depi from './assests/depi_logo.jpg';
 import star from './assests/star.jpg';
 import event from "./assests/event.jpg";
 import h from './assests/huawei.jpg';
+import { motion } from "framer-motion";
 
 const Home = () =>{
   const handleScroll = () => {
@@ -36,7 +37,7 @@ const Home = () =>{
       description: "Coordinated and managed the graduation party, overseeing planning, logistics, and execution to ensure a seamless and memorable event.",
     },
   ];
-  
+
   return (
     <>
       <div className="mainPage">
@@ -65,7 +66,10 @@ const Home = () =>{
       
       <div className='title' id="about">About Aly El-Badry</div>
       <hr />
-      <div className="about">
+      <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="about">
         <div className='about-content'>
           <div className="about-text">
             <p className="main-text">A second-year student at Cairo University's Faculty of Computer Science and Artificial Intelligence, Aly El-Badry is a dedicated Data Scientist and Full-Stack Developer with a strong passion for advancing toward a career as an AI Engineer.</p>
@@ -98,13 +102,15 @@ const Home = () =>{
           </div>
           <img src={Profile} alt="profile-img" className='My-Image' />
         </div>
-      </div>
-
+      </motion.div>
 
 
       <div className="title">Experience</div>
       <hr />
-      <div className="exp">
+      <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="exp">
         <div className="sec">
           <div className="comp-head">
             <div className="comp-name">
@@ -125,9 +131,12 @@ const Home = () =>{
             </ul>
           </div>
         </div>
-        <img src={depi} alt="" />
-      </div>
-      <div className="exp">
+        <motion.img src={depi} alt="" initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} />
+      </motion.div>
+      <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="exp">
         <div className="sec">
           <div className="comp-head">
             <div className="comp-name">
@@ -148,12 +157,15 @@ const Home = () =>{
           </ul>
           </div>
         </div>
-        <img src={h} alt="" />
-      </div>
+        <motion.img src={h} alt="" initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }}/>
+      </motion.div>
 
       <div className="title">Education</div>
       <hr />
-      <div className="about">
+      <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="about">
         <div className='about-content'>
           <img src={cairo} alt="Cairo university" />
           <div className="college-details">
@@ -177,20 +189,24 @@ const Home = () =>{
                 <li>Build a solid foundation in your preferred specialization</li>
               </ul>
             </div>
-          </div>
-        </div> 
-      </div>
+          </div> 
+        </div>
+      </motion.div>
 
       <div className="title">Studnet Activities</div>
       <hr />
       <div className="activity">
       {activities.map((activity) => (
-        <div className="bar" key={activity.id}>
+        <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} 
+        className="bar" key={activity.id}>
           <img src={activity.image} alt={activity.title} className="activity-img" />
           <div className="activity-head">{activity.title}</div>
           <div className="member-title">{activity.memberTitle}</div>
           <div className="activity-content">{activity.description}</div>
-        </div>
+        </motion.div>
       ))}
     </div>
 
@@ -205,7 +221,7 @@ const Home = () =>{
         <div className="container left">
           <h3>Data Science (Machine Learning , Deep Learning)</h3>
         </div>
-        <div className="container right">
+        <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} className="container right">
           <div className="details">
           <ul>
             <li>Proficient in Python (Pandas, NumPy, Scikit-learn, Matplotlib).</li>
@@ -216,13 +232,13 @@ const Home = () =>{
             <li>Experience with data visualization and storytelling.</li>
           </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Web Development Field */}
         <div className="container left">
           <h3>Web Development(Frontend and Backend Development)</h3>
         </div>
-        <div className="container right">
+        <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} className="container right">
           <div className="details">
             <ul>
               <li>Proficient in React.jsand modern front-end development.</li>
@@ -231,13 +247,13 @@ const Home = () =>{
               <li>Version control using Git and GitHub.</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Other Skills Field */}
         <div className="container left">
           <h3>Other Skills</h3>
         </div>
-        <div className="container right">
+        <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} className="container right">
           <div className="details">
             <ul>
               <li>Strong problem-solving and critical thinking abilities.</li>
@@ -247,7 +263,7 @@ const Home = () =>{
               <li>Enthusiastic team player with a growth mindset.</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="project">

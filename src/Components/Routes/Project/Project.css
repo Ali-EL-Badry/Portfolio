@@ -93,10 +93,11 @@
 
 .kaggle-button {
     display: inline-block;
-    background-color: #1A9AD6; /* Kaggle Blue */
+    background-color: #1A9AD6; 
+    filter: drop-shadow(0 0 0.75rem #1A9AD6);
     color: black;
     padding: 12px 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
