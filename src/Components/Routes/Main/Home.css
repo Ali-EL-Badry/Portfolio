@@ -369,6 +369,8 @@ hr {
 .exp{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; 
+  overflow-x: clip;
   margin: 0rem auto;
   max-width: 1200px;
   border-radius: 10px;
@@ -402,13 +404,59 @@ hr {
   filter: drop-shadow(0 0 0.75rem #3498db);
 }
 
+@media (max-width: 768px) {
+  .exp {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sec {
+    width: 90%; /* Makes it take more space on smaller screens */
+  }
+
+  .comp-head {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .college-content.com {
+    width: 100%; /* Ensures full width on smaller screens */
+  }
+
+  .exp > img {
+    width: 80%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp > img {
+    width: 90%; 
+    margin-top: 20px;
+  }
+
+  .sec {
+    width: 100%;
+  }
+
+  .comp-head {
+    width: 100%;
+  }
+
+  .college-content.com {
+    width: 100%;
+  }
+}
+
 .activity {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 100px;
   margin: 3rem auto;
-  width: 1200px;
+  width: 80%;
 }
 
 .bar {
@@ -427,7 +475,6 @@ hr {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
 .activity-head {
   font-size: 1.5rem;
   font-weight: bold;
@@ -444,10 +491,70 @@ hr {
   color: lightgray;
 }
 
-/* For responsive layout (2 cards on larger screens) */
-@media screen and (min-width: 768px) {
+
+.activity {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center;
+  gap: 100px;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+/* Keep the original card design but make it responsive */
+.bar {
+  color: white;
+  width: 40%;
+  padding: 20px;
+  box-shadow: 0 0px 10px #3498db;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fix image scaling issue */
+.activity-img {
+  width: 100px; /* Default size */
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  object-fit: cover; /* Ensure the image retains proportions */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .activity {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; /* Reduce gap on medium screens */
+  }
+
+  .bar {
+    width: 45%; /* Slightly increase width for better fit */
+  }
+}
+
+@media (max-width: 768px) {
+  .activity {
+    gap: 30px; /* Reduce gap for smaller screens */
+  }
+
+  .bar {
+    width: 80%; /* Make each card take more space */
+  }
+
+  .activity-img {
+    width: 80px; /* Reduce image size */
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar {
+    width: 90%; /* Make cards almost full width */
+  }
+
+  .activity-img {
+    width: 70px; /* Further reduce image size */
+    height: 70px;
   }
 }
 
@@ -455,6 +562,7 @@ hr {
   position: relative;
   max-width: 1200px;
   margin: 30px auto;
+  overflow-x: clip;
 }
 
 .timeline::after {

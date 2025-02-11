@@ -218,9 +218,12 @@ const Home = () =>{
         <video autoPlay loop muted className="video-bg">
           <source src={videoBg} type="video/mp4" />
         </video>
-        <div className="container left">
-          <h3>Data Science (Machine Learning , Deep Learning)</h3>
-        </div>
+        <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="container left">
+          <h3>AI Development</h3>
+        </motion.div>
         <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} className="container right">
           <div className="details">
           <ul>
@@ -235,9 +238,12 @@ const Home = () =>{
         </motion.div>
 
         {/* Web Development Field */}
-        <div className="container left">
-          <h3>Web Development(Frontend and Backend Development)</h3>
-        </div>
+        <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="container left">
+          <h3>Web Development</h3>
+        </motion.div>
         <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} className="container right">
           <div className="details">
             <ul>
@@ -250,9 +256,12 @@ const Home = () =>{
         </motion.div>
 
         {/* Other Skills Field */}
-        <div className="container left">
+        <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="container left">
           <h3>Other Skills</h3>
-        </div>
+        </motion.div>
         <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}viewport={{ once: true, amount: 0.3 }}transition={{ duration: 0.8, ease: "easeOut" }} className="container right">
           <div className="details">
             <ul>
@@ -267,9 +276,12 @@ const Home = () =>{
       </div>
 
       <div className="project">
-        <div className='title'>Some Projects</div>
+        <div className='title'>Projects</div>
         <hr />
-        <div className="projects">
+        <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="projects">
           <a href="https://github.com/Ali-EL-Badry/Pothole-Detection" className="card">
             <img src={pothole} alt="pothole Detection" />
             <p className="main">Pothole-Detection</p>
@@ -285,12 +297,15 @@ const Home = () =>{
             <p className="main">Vole Machine Simulator</p>
             <p className="sub">Technology: C++, QT</p>
           </a>
-        </div>
+        </motion.div>
         <NavLink className="btton " id='blue' to="/projects">For More</NavLink>
 
-        <div className='title'>Some Certificates</div>
+        <div className='title'>Certificates</div>
         <hr />
-        <div className="cert">
+        <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className="cert">
           <div className="card">
             <img src={hcia} alt="hcia" />
             <p className="main">HCIA:AI</p>
@@ -306,7 +321,7 @@ const Home = () =>{
             <p className="main">AI Carrer essential</p>
             <p className="sub">From: ALX</p>
           </div>
-        </div>
+        </motion.div>
           <NavLink className="btton" id='black' to='/certificats'>For More</NavLink>
       </div>
     </>

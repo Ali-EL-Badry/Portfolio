@@ -1,6 +1,6 @@
 .first {
     padding-top: 100px;
-    margin: 0;
+    margin-top: 0;
 }
 
 /* Responsive Cards Container */
@@ -18,6 +18,7 @@
     border-radius: 16px;
     width: 30%;  
     margin: 50px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 162, 255, 0.2); /* Blue Glow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;

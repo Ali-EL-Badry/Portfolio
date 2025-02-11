@@ -87,72 +87,60 @@ const projects = [
 
 const Project = () => {
   return (
+    <motion.div className="pro">
+  {projects.map((project, index) => (
     <motion.div 
-      className="pro"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // Starts when 20% is visible
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2, duration: 0.6 } }
-      }}
+      key={index}
+      className="project-section"
     >
-      {projects.map((project, index) => (
-        <motion.div 
-          key={index}
-          className="project-section"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.2 }}
-        >
-          <div className={`title ${index === 0 ? "first" : ""}`}>{project.title}</div>
-          <hr />
-          <motion.div 
-            className="cards"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.1, duration: 0.5 } }
-            }}
-          >
-            {project.items.map((item, i) => (
-              <motion.a 
-                href={item.link} 
-                className="ca" 
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <img src={item.img} alt={item.alt} />
-                <p className="main">{item.main}</p>
-                <p className="sub">{item.sub}</p>
-              </motion.a>
-            ))}
-          </motion.div>
+      <motion.div initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }} className={`title ${index === 0 ? "first" : ""}`}>{project.title}</motion.div>
+      <motion.hr  initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}  
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}/>
 
-          {/* Kaggle Section Under Data Science Section */}
-          {project.kaggle && (
-            <motion.div 
-              className="kaggle-section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <p>If you want to see more trained models and notebooks, visit my</p>
-              <a href="https://www.kaggle.com/alyelbadry" className="kaggle-button" target="_blank">
-                Kaggle Account
-              </a>
-            </motion.div>
-          )}
+      <motion.div 
+        className="cards"
+      >
+        {project.items.map((item, i) => (
+          <motion.a 
+            href={item.link} 
+            className="ca" 
+            key={i}
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}  
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <img src={item.img} alt={item.alt} />
+            <p className="main">{item.main}</p>
+            <p className="sub">{item.sub}</p>
+          </motion.a>
+        ))}
+      </motion.div>
+
+      {/* Kaggle Section Under Data Science Section */}
+      {project.kaggle && (
+        <motion.div 
+          className="kaggle-section"
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}  
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <p>If you want to see more trained models and notebooks, visit my</p>
+          <a href="https://www.kaggle.com/alyelbadry" className="kaggle-button" target="_blank">
+            Kaggle Account
+          </a>
         </motion.div>
-      ))}
+      )}
     </motion.div>
+  ))}
+</motion.div>
+
   );
 };
 

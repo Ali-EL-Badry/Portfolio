@@ -5,6 +5,9 @@ import Home from './Components/Routes/Main/Home.jsx';
 import Project from './Components/Routes/Project/Project.jsx';
 import Cert from './Components/Routes/Cert/Cert.jsx';
 import Feedback from './Components/Routes/Feedback/Feedback.jsx';
+import CertDesc from './Components/Routes/Cert-Desc/Cert-Desc.jsx';
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -13,6 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'projects', element: <Project /> },
       { path: 'certificats', element: <Cert /> },
+      { path: 'certificats/:certificate', element: <CertDesc /> },
       { path: 'feedback', element: <Feedback /> },
     ],
   },
