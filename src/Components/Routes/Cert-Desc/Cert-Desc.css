@@ -1,0 +1,345 @@
+.describiton{
+    margin: 0;
+    padding: 6rem 10rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.all{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.describiton .all .limit{
+    width: 13rem;
+}
+.lin{
+    margin: 0;
+    width: 100%;
+}
+.text-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.big-text {
+    position: absolute;
+    font-size: 80px;
+    font-weight: bold;
+    color: #3498bd25;
+    z-index: 0;
+    font: 'Roboto', sans-serif;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.title-text {
+    color: #3498bd;
+    position: relative;
+    font-size: 35px;
+    font-weight: bold;
+    z-index: 1; 
+    font-family: "Courier New", Courier, monospace;
+}
+
+.cert-details{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 30rem; 
+    height: 20rem; 
+    overflow: hidden; 
+    border-radius: 1rem;
+    box-shadow: 0 0 20px #3498bd;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cert-details .text{
+    width: 80%;
+}
+
+.cert-details .text >h1{
+    font-size: 60px;
+    font-weight: 900;
+    filter: drop-shadow(0 0 10px #3498bd);
+    color: #3498bd;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.cert-details .text >h2{
+    font-size: 30px;
+    font-weight: 600;
+    filter: drop-shadow(0 0 10px #3498bd);
+    color: #3498bd;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.cert-details .text .sup-title{
+    font-size: 20px;
+    font-weight: 600;
+    filter: drop-shadow(0 0 10px #3498bd);
+    font-family: "Courier New", Courier, monospace;
+}
+
+.cert-details .text .d , .cert-details .text >ul{
+    font-size: 15px;
+    width: 90%;
+    font-weight: 600;
+    color: gray;
+    filter: drop-shadow(0 0 10px #3498bd);
+    font-family: "Courier New", Courier, monospace;
+    margin-bottom: 1rem;
+}
+
+.cert-details .text >ul{
+    margin-left: 20px;
+    width: 100%;
+}
+.banner{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.animated-button {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #3498bd;
+    box-shadow: 0 0 0 2px #3498bd;
+    filter: drop-shadow(0 0 50px #3498bd);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #3498bd;
+    z-index: 9;
+    
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #3498bd;
+    border-radius: 50%;
+    opacity: 0;
+    
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: black;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: #212121;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px #3498bd;
+    
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1024px) {
+    .describiton {
+        padding: 4rem 6rem;
+    }
+
+    .cert-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container {
+        width: 24rem;
+        height: 16rem;
+    }
+
+    .cert-details .text {
+        width: 100%;
+    }
+
+    .cert-details .text > h1 {
+        font-size: 50px;
+    }
+
+    .cert-details .text > h2 {
+        font-size: 26px;
+    }
+
+    .cert-details .text .sup-title {
+        font-size: 18px;
+    }
+
+    .cert-details .text .d, 
+    .cert-details .text > ul {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 768px) {
+    .describiton {
+        padding: 3rem 2rem;
+    }
+
+    .text-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .big-text {
+        font-size: 50px;
+    }
+
+    .title-text {
+        font-size: 28px;
+    }
+
+    .cert-details {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .cert-details .text > h1 {
+        font-size: 40px;
+    }
+
+    .cert-details .text > h2 {
+        font-size: 22px;
+    }
+
+    .cert-details .text .sup-title {
+        font-size: 16px;
+    }
+
+    .cert-details .text .d, 
+    .cert-details .text > ul {
+        font-size: 13px;
+    }
+
+    .animated-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design for Small Mobile Screens */
+@media (max-width: 480px) {
+    .describiton {
+        padding: 2rem 1rem;
+    }
+
+    .big-text {
+        font-size: 40px;
+    }
+
+    .title-text {
+        font-size: 24px;
+    }
+
+    .cert-details {
+        gap: 1.5rem;
+    }
+
+    .cert-details .text > h1 {
+        font-size: 35px;
+    }
+
+    .cert-details .text > h2 {
+        font-size: 20px;
+    }
+
+    .cert-details .text .sup-title {
+        font-size: 14px;
+    }
+
+    .cert-details .text .d, 
+    .cert-details .text > ul {
+        font-size: 12px;
+    }
+
+    .animated-button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}

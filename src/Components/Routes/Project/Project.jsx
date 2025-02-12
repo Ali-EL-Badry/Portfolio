@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Data Science Project",
+    title: "AI Project",
     items: [
       {
         link: "https://github.com/Ali-EL-Badry/Pothole-Detection",
@@ -58,7 +58,7 @@ const projects = [
     ],
   },
   {
-    title: "Other Fields Project",
+    title: "Different Fields Project",
     items: [
       {
         link: "https://github.com/Ali-EL-Badry/Vole_Machine_Simulator",
