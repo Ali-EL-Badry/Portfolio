@@ -248,6 +248,7 @@
     .cert-details .text .d, 
     .cert-details .text > ul {
         font-size: 14px;
+        width: 100%;
     }
 }
 
@@ -295,18 +296,15 @@
     .cert-details .text .d, 
     .cert-details .text > ul {
         font-size: 13px;
+        width: 100%;
     }
 
-    .animated-button {
-        padding: 12px 24px;
-        font-size: 14px;
-    }
 }
 
 /* Responsive Design for Small Mobile Screens */
 @media (max-width: 480px) {
     .describiton {
-        padding: 2rem 1rem;
+        padding: 4rem 1rem;
     }
 
     .big-text {
@@ -336,10 +334,6 @@
     .cert-details .text .d, 
     .cert-details .text > ul {
         font-size: 12px;
-    }
-
-    .animated-button {
-        padding: 10px 20px;
-        font-size: 12px;
+        width: 100%;
     }
 }
