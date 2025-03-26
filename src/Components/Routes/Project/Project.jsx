@@ -9,6 +9,7 @@ import elearn from './assests/e-learn.png';
 import xo from './assests/x.jpeg';
 import pho from './assests/photoshop..png'
 import { motion } from "framer-motion";
+import nyTaxi from "./assests/ny-taxi.png";
 
 const projects = [
   {
@@ -28,6 +29,13 @@ const projects = [
         main: "Machine Learning Algo.",
         sub: "Technology: Supervised and Unsupervised Algo.",
       },
+      {
+        link: "https://github.com/Ali-EL-Badry/NY-Taxi-DashBoard",
+        img: nyTaxi,
+        alt: "NY Taxi",
+        main: "New york Taxi Dashboard",
+        sub: "Technology: Python, Dash, Plotly",
+      }
     ],
     kaggle: true,
   },
