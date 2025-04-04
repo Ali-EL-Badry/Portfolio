@@ -1,0 +1,230 @@
+.certificates-container {
+  padding: 80px 120px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #0a0a0a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-underline {
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1800px;
+  padding: 20px;
+}
+
+.certificate-card {
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  height: 100%;
+  min-height: 450px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.text-content {
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cert-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #3498db;
+  text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.cert-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Hover Effects */
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(52, 152, 219, 0.2);
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+.certificate-card:hover .image-wrapper img {
+  transform: scale(1.1);
+}
+
+.certificate-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.certificate-card:hover .cert-title {
+  color: #2ecc71;
+  text-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .certificates-container {
+    padding: 80px 80px;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 1400px) {
+  .certificates-container {
+    padding: 80px 60px;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .certificates-container {
+    padding: 60px 40px;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .cert-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificates-container {
+    padding: 60px 30px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .cert-title {
+    font-size: 1.4rem;
+  }
+
+  .cert-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificates-container {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .text-content {
+    padding: 20px;
+  }
+
+  .cert-title {
+    font-size: 1.3rem;
+  }
+
+  .cert-subtitle {
+    font-size: 0.9rem;
+  }
+} 

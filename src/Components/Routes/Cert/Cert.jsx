@@ -15,6 +15,7 @@ import sql from './assests/sql.jpg';
 import { motion } from "framer-motion";
 import Git from './assests/Git and Github.png';
 import { NavLink } from 'react-router-dom';
+import './Cert.css';
 
 const certificates = [
   { img: hcia, alt: "hcia", main: "HCIA:AI", sub: "From: Huawei ICT Academy" },
@@ -32,41 +33,76 @@ const certificates = [
   { img: data, alt: "data-cleaning", main: "Data Cleaning", sub: "From: Kaggle" },
   { img: sql, alt: "sql", main: "SQL Course", sub: "From: Udemy" },
 ];
+
 const MotionNavLink = motion(NavLink);
 
 const Cert = () => {
   return (
-    <>
-      <div className="title first">Certificates</div>
-      <hr />
+    <div className="certificates-container">
       <motion.div 
-        className="cards"
-        initial="hidden"
-        whileInView="visible" 
-        viewport={{ once: true, amount: 0 }} 
+        className="title-section"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="title">Certificates</h1>
+        <div className="title-underline"></div>
+      </motion.div>
+
+      <motion.div 
+        className="certificates-grid"
         variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15, duration: 0.3 } }
+          hidden: { opacity: 0 },
+          visible: { 
+            opacity: 1,
+            transition: { 
+              staggerChildren: 0.1,
+              delayChildren: 0.3
+            }
+          }
         }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
       >
         {certificates.map(({ img, alt, main, sub }, index) => (
           <MotionNavLink 
             exact
             to={`/certificats/${alt}`}
-            className="ca" 
+            className="certificate-card" 
             key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
+            variants={{
+              hidden: { opacity: 0, y: 50, scale: 0.8 },
+              visible: { 
+                opacity: 1, 
+                y: 0, 
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 12
+                }
+              }
+            }}
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.2 }
+            }}
           >
-            <img src={img} alt={alt} />
-            <p className="main">{main}</p>
-            <p className="sub">{sub}</p>
+            <div className="card-content">
+              <div className="image-wrapper">
+                <img src={img} alt={alt} />
+                <div className="image-overlay"></div>
+              </div>
+              <div className="text-content">
+                <h3 className="cert-title">{main}</h3>
+                <p className="cert-subtitle">{sub}</p>
+              </div>
+            </div>
           </MotionNavLink>
         ))}
       </motion.div>
-    </>
+    </div>
   );
 };
 

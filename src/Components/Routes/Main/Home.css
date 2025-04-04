@@ -1,4 +1,3 @@
-
 .mainPage {
   position: relative;
   width: 100%;
@@ -563,6 +562,7 @@ hr {
   max-width: 1200px;
   margin: 30px auto;
   overflow-x: clip;
+  padding: 20px 0;
 }
 
 .timeline::after {
@@ -574,6 +574,7 @@ hr {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+  box-shadow: 0 0 10px #3498db;
 }
 
 /* Container around content */
@@ -582,6 +583,7 @@ hr {
   position: relative;
   background-color: inherit;
   width: 50%;
+  transition: all 0.3s ease;
 }
 
 .container.left::after {
@@ -596,7 +598,14 @@ hr {
   border-radius: 50%;
   z-index: 1;
   filter: drop-shadow(0 0 0.75rem #3498db);
+  transition: all 0.3s ease;
 }
+
+.container.left:hover::after {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #3498db;
+}
+
 .container.left h3 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -604,6 +613,12 @@ hr {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   text-shadow: 0 0 5px #3498db;
+  transition: all 0.3s ease;
+}
+
+.container.left:hover h3 {
+  transform: translateX(5px);
+  text-shadow: 0 0 10px #3498db;
 }
 
 .left {
@@ -614,43 +629,111 @@ hr {
   left: 50%;
 }
 
-
 .right::after {
   left: -16px;
 }
 
-/* The actual content */
+/* The actual content - NEW UNIFIED DESIGN */
 .details {
-  padding: 20px 30px;
-  background-color: black;
+  padding: 25px;
+  background: rgba(13, 13, 13, 0.8);
   position: relative;
-  border-radius: 10px;
-  filter: drop-shadow(0 0 0.75rem #3498db); 
-  border-left: #3498db 6px solid;
-  font-family: Helvetica, sans-serif;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  backdrop-filter: blur(10px);
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
+
+.details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0) 100%);
+  z-index: 0;
+}
+
+.details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(52, 152, 219, 0.2);
+  border: 1px solid rgba(52, 152, 219, 0.5);
+}
+
 .details ul {
   list-style: none;
   padding: 0;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .details li {
-  margin: 0.5rem 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: #e0e0e0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.5);
+  border-left: 3px solid #3498db;
+  display: flex;
+  align-items: center;
 }
+
+.skill-icon {
+  color: #3498db;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  min-width: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.details li:hover {
+  background: rgba(30, 30, 30, 0.7);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.details li:hover .skill-icon {
+  transform: scale(1.2);
+  color: #5dade2;
+  text-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+}
+
 @media screen and (max-width: 600px) {
-/* Place the timelime to the left */
+  .details {
+    padding: 20px;
+  }
+  
+  .details li {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+  
+  /* Place the timeline to the left */
   .timeline::after {
     left: 31px;
   }
 
-/* Full-width containers */
+  /* Full-width containers */
   .container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
-/* Make sure that all arrows are pointing leftwards */
+  /* Make sure that all arrows are pointing leftwards */
   .container::before {
     left: 60px;
     border: medium solid white;
@@ -658,16 +741,15 @@ hr {
     border-color: transparent white transparent transparent;
   }
 
-/* Make sure all circles are at the same spot */
+  /* Make sure all circles are at the same spot */
   .left::after, .right::after {
     left: 15px;
   }
-
+  
   .right {
     left: 0%;
   }
 }
-
 
 .project {
   display: flex;
