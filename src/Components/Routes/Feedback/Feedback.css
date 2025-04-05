@@ -6,64 +6,124 @@
     justify-content: center;
     min-height: 100vh;
     width: 100%;
-    background: linear-gradient(180deg, #000000 40%, #3498db );
-    padding: 5%; 
+    background: linear-gradient(180deg, #000000 40%, #3498db);
+    padding: 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.feed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 48%, rgba(52, 152, 189, 0.05) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(52, 152, 189, 0.05) 50%, transparent 52%);
+    background-size: 100px 100px;
+    animation: backgroundMove 30s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
 }
 
 /* Form Container */
 .form-container {
     width: 100%;
     max-width: 500px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(13, 13, 13, 0.7);
     backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
-.form{
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(52, 152, 219, 0.2);
+    border-color: rgba(52, 152, 219, 0.5);
+}
+
+.form {
     width: 100%;
     max-width: 500px;
     backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 20px;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 /* Title */
 .form-title {
     text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #3498db;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    font-family: "Courier New", Courier, monospace;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+                     0 0 30px rgba(52, 152, 219, 0.6),
+                     0 0 40px rgba(52, 152, 219, 0.4);
+    }
 }
 
 /* Form Styling */
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    width: 100%; 
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
 }
 
 label {
     font-size: 1.1em;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #3498db;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 input, select, textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
     font-size: 1em;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     width: 100%;
-    margin-bottom: 10px; /* Adds space between form fields */
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* Style the select dropdown */
@@ -71,70 +131,108 @@ select {
     appearance: none;
     cursor: pointer;
     color: white;
+    background-image: linear-gradient(45deg, transparent 50%, #3498db 50%),
+                      linear-gradient(135deg, #3498db 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px),
+                         calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px,
+                    5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 30px;
 }
 
 /* Style the dropdown options */
 select option {
-    background: #3498db;
-    color: black;
+    background: #1a1a1a;
+    color: white;
+    padding: 10px;
 }
 
 /* Placeholder Styling */
 input::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 textarea {
     resize: none;
+    min-height: 120px;
 }
 
 /* Submit Button */
 .submit-button {
-    background: #007bff;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
+    color: #3498db;
+    padding: 12px 30px;
+    border: 2px solid #3498db;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1.2em;
-    transition: background 0.3s ease-in-out;
+    font-weight: 600;
+    transition: all 0.3s ease;
     display: block;
-    margin: 20px auto; /* Adds space around button */
-    width: 50%;
+    margin: 30px auto;
+    width: auto;
+    min-width: 200px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.2), transparent);
+    transition: 0.5s;
 }
 
 .submit-button:hover {
-    background: #0056b3;
+    background: #3498db;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.submit-button:hover::before {
+    left: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .feed {
-        padding: 10px;
+        padding: 20px;
     }
 
     .form-container {
-        width: 90%; /* Adjust form width for smaller screens */
-        padding: 20px; /* Adjust padding for smaller screens */
+        width: 90%;
+        padding: 25px;
+    }
+
+    .form-title {
+        font-size: 1.8em;
     }
 
     .submit-button {
-        width: 70%; /* Makes button larger on small screens */
+        width: 70%;
+        font-size: 1.1em;
     }
 }
 
 @media (max-width: 480px) {
     .form-title {
-        font-size: 1.4em; /* Reduces font size for small screens */
+        font-size: 1.5em;
     }
 
     .form-container {
-        padding: 15px;
+        padding: 20px;
     }
 
     .submit-button {
-        width: 80%; /* Further increases button size */
-        font-size: 1em; /* Adjusts font size for better readability */
+        width: 80%;
+        font-size: 1em;
+        padding: 10px 25px;
     }
 }

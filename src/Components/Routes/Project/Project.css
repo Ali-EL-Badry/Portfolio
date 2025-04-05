@@ -15,7 +15,7 @@
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 10px;
-    background: linear-gradient(90deg, #00a2ff, #00ff9d);
+    background: linear-gradient(90deg, #3498db, #2980b9);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -40,7 +40,7 @@
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 162, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(52, 152, 219, 0.15);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
     color: #fff;
@@ -109,7 +109,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #00a2ff, #00ff9d);
+    background: linear-gradient(90deg, #3498db, #2980b9);
     transition: width 0.3s ease;
 }
 
@@ -124,8 +124,8 @@
 /* Hover Effects */
 .ca:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 162, 255, 0.3);
-    border-color: rgba(0, 162, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);
+    border-color: rgba(52, 152, 219, 0.5);
 }
 
 .ca:hover img {
@@ -150,13 +150,13 @@
 }
 
 .ca .tag {
-    background: rgba(0, 162, 255, 0.2);
-    color: #00a2ff;
+    background: rgba(52, 152, 219, 0.2);
+    color: #3498db;
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
-    border: 1px solid rgba(0, 162, 255, 0.3);
+    border: 1px solid rgba(52, 152, 219, 0.3);
 }
 
 /* Kaggle Section */
@@ -179,14 +179,14 @@
 
 .kaggle-button {
     display: inline-block;
-    background: linear-gradient(90deg, #1A9AD6, #00a2ff);
+    background: linear-gradient(90deg, #3498db, #2980b9);
     color: white;
     padding: 12px 25px;
     border-radius: 30px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(26, 154, 214, 0.4);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
     border: none;
     position: relative;
     overflow: hidden;
@@ -205,7 +205,7 @@
 
 .kaggle-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(26, 154, 214, 0.6);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
 }
 
 .kaggle-button:hover::before {
@@ -228,6 +228,7 @@
     .title {
         font-size: 2rem;
     }
+
 }
 
 @media (max-width: 480px) {

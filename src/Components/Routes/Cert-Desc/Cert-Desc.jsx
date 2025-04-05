@@ -16,6 +16,7 @@ import sql from './assests/sql.jpg';
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import Git from './assests/Git and Github.png';
+import Error from '../Error/Error';
 import './Cert-Desc.css'; 
 
 const certificates = [
@@ -30,7 +31,7 @@ const certificates = [
       "Exploring AI frameworks like TensorFlow and PyTorch.",
       "Learning how to train and optimize machine learning models.",
       "Gaining insights into AI applications in various industries.",
-      "Developing AI models using Huawei’s computing platforms."
+      "Developing AI models using Huawei's computing platforms."
     ]
   },
   {
@@ -220,6 +221,11 @@ const certDesc = () => {
   const { certId } = useParams();
   
   const cert = certificates.find(({ alt }) => alt === certId);
+  
+  // If certificate not found, show error page
+  if (!cert) {
+    return <Error />;
+  }
   
   return (
     <>

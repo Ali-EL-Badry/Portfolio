@@ -6,7 +6,7 @@ import Project from './Components/Routes/Project/Project.jsx';
 import Cert from './Components/Routes/Cert/Cert.jsx';
 import Feedback from './Components/Routes/Feedback/Feedback.jsx';
 import CertDesc from './Components/Routes/Cert-Desc/Cert-Desc.jsx';
-
+import Error from './Components/Routes/Error/Error.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       { path: 'certificats', element: <Cert /> },
       { path: 'certificats/:certId', element: <CertDesc /> },
       { path: 'feedback', element: <Feedback /> },
+      { path: '*', element: <Error /> },
     ],
   },
 ]);
