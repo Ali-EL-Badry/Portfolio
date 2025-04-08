@@ -1,90 +1,184 @@
-
 header {
     display: flex;
     align-items: center;
-    padding: 0.75rem 3rem;
-    position:fixed;
+    padding: 0;
+    position: fixed;
     width: 100%;
     z-index: 1000;
     background: transparent;
-    transition: 600ms;
-    border-radius: 8px;
+    transition: all 0.3s ease;
+    top: 0;
 }
-.sticky{
-    padding: 1rem 4rem;
-    background: linear-gradient(135deg, #000000, #292929);
-    box-shadow: 0 4px 8px rgba(92, 92, 92, 0.4);
+
+/* Scroll down effect - header slides up and out of view */
+.scroll-down {
+    transform: translateY(-100%);
+    box-shadow: none;
 }
+
+/* Scroll up effect - header slides down and into view */
+.scroll-up {
+    transform: translateY(0);
+}
+
+/* When sticky and scrolling up, add a nice shadow and border */
+.sticky.scroll-up {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sticky {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+}
+
 .Logo {
-    font-size: 1.7rem;
-    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
     text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.logo-icon {
     color: #3498db;
-    flex:1;
-}   
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 3px rgba(52, 152, 219, 0.5));
+}
+
+.logo-text {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.Logo:hover {
+    transform: translateY(-2px);
+    color: #3498db;
+    text-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
 
 .nav {
     display: flex;
     align-items: center;
-    flex: 2;
+    gap: 2rem;
+}
+
+.nav-path {
+    display: flex;
+    gap: 2rem;
 }
 
 .nav a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.nav .nav-path{
-    display: flex;
-    justify-content: space-between;
-    flex: 3;
-}
-
-.nav a.active, .nav a:hover {
-    color: #3498db;
-}
-.nav .nav-icons{
-    flex: 2;
-    text-align: right;
-}
-
-.github, .linkedin {
-    color: white; 
-    margin: 0 20px; 
+    font-size: 1rem;
+    font-weight: 500;
     transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
 }
 
-.github:hover, .linkedin:hover {
-    transform: scale(1.2);
-    color: #3498db; 
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-icons a {
+    color: #fff;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icons a:hover {
+    color: #3498db;
+    transform: translateY(-2px);
+    background: rgba(52, 152, 219, 0.1);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
 }
 
 .menu-button {
     display: none;
-    font-size: 2rem;
     background: none;
     border: none;
-    color: white;
     cursor: pointer;
-    transition: all 0.2s ease;
+    padding: 0.5rem;
+}
+
+.menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.menu-icon::before {
+    top: -6px;
+}
+
+.menu-icon::after {
+    bottom: -6px;
 }
 
 .sidebar {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    background-color:#0e0e0e ;
-    color: white;
-    padding: 20px;
+    width: 300px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
     transition: right 0.3s ease;
-    z-index: 1000;
+    z-index: 1001;
+    border-left: 1px solid rgba(52, 152, 219, 0.2);
 }
 
 .sidebar.open {
@@ -94,28 +188,41 @@ header {
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;
-    justify-content: center;
-    text-align: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
+
 .sidebar-nav a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.2rem;
-    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 4px;
 }
-.sidebar-nav a.active , .sidebar-nav a:hover, .menu-button:hover , .close-button:hover{
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
     color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
 }
+
 .close-button {
-    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     background: none;
     border: none;
     color: #fff;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.2s ease;
-    align-self: flex-end;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    color: #3498db;
+    transform: rotate(90deg);
 }
 
 @media (max-width: 1100px) {
@@ -125,5 +232,23 @@ header {
 
     .menu-button {
         display: block;
+    }
+
+    .header-content {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 1rem;
+    }
+
+    .Logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
     }
 }
