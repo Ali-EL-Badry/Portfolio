@@ -65,9 +65,7 @@ function Header() {
               <NavLink to="https://www.linkedin.com/in/aly-el-badry/" className="linkedin" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={24} />
               </NavLink>
-              <NavLink to="https://twitter.com/your-twitter" className="twitter" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={24} />
-              </NavLink>
+
             </div>
           </div>
           <button className="menu-button" onClick={toggleSidebar} aria-label="Toggle menu">
@@ -90,9 +88,7 @@ function Header() {
             <NavLink to="https://www.linkedin.com/in/aly-el-badry/" className="linkedin" target="_blank" rel="noopener noreferrer">
               <FaLinkedin size={24} />
             </NavLink>
-            <NavLink to="https://twitter.com/your-twitter" className="twitter" target="_blank" rel="noopener noreferrer">
-              <FaTwitter size={24} />
-            </NavLink>
+            
           </div>
         </nav>
       </div>

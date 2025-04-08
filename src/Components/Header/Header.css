@@ -6,25 +6,21 @@ header {
     width: 100%;
     z-index: 1000;
     background: transparent;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     top: 0;
+    left: 0;
+    right: 0;
 }
 
-/* Scroll down effect - header slides up and out of view */
-.scroll-down {
-    transform: translateY(-100%);
-    box-shadow: none;
-}
-
-/* Scroll up effect - header slides down and into view */
-.scroll-up {
-    transform: translateY(0);
-}
-
-/* When sticky and scrolling up, add a nice shadow and border */
-.sticky.scroll-up {
+header.sticky {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+header.scroll-down, header.scroll-up {
+    transform: none;
 }
 
 .header-content {
@@ -35,13 +31,6 @@ header {
     padding: 1rem 3rem;
     max-width: 1400px;
     margin: 0 auto;
-}
-
-.sticky {
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(52, 152, 219, 0.2);
 }
 
 .Logo {
